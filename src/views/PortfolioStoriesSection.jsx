@@ -1,6 +1,7 @@
 import React from "react";
 import { PORTFOLIO_CHAPTERS, PORTFOLIO_JOURNEY } from "../data/portfolioNarrative";
 import { PORTFOLIO_STORIES } from "../data/portfolioStories";
+import { publicAssetPath } from "../utils/publicAssetPath";
 
 // PortfolioStoriesSection trình bày các dấu mốc hồ sơ theo dạng bản tin ảnh.
 export function PortfolioStoriesSection({ activeTab, lang, themeCard, themeSubtext, themePrimaryText }) {
@@ -46,7 +47,7 @@ export function PortfolioStoriesSection({ activeTab, lang, themeCard, themeSubte
               {story.images.map((image) => (
                 <figure key={image.src} className="overflow-hidden rounded-xl">
                   <img
-                    src={image.src}
+                    src={publicAssetPath(image.src)}
                     alt={lang === "vi" ? image.alt : image.altEn || image.alt}
                     loading="lazy"
                     className={`h-32 w-full transition-transform duration-300 sm:h-40 ${

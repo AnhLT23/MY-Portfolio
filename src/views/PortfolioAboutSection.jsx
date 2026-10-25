@@ -1,10 +1,12 @@
 import React from "react";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { ASSETS, CANDIDATE_INFO } from "../data/portfolioContent";
+import { publicAssetPath } from "../utils/publicAssetPath";
 
 // PortfolioAboutSection hiển thị riêng một khu vực của portfolio.
 export function PortfolioAboutSection(props) {
   const { activeTab, lang, themeCard, themeElevated, themeSubtext, themePrimaryText } = props;
+  const avatarSuit = publicAssetPath(ASSETS.avatarSuit);
   return (
     <>
         {/* ====================================================================
@@ -17,12 +19,12 @@ export function PortfolioAboutSection(props) {
               <div className="lg:col-span-4 flex flex-col items-center">
                 <div className="relative w-64 h-80 rounded-2xl overflow-hidden bg-slate-950 group border-2 border-sky-500/40 shadow-xl">
                   <img
-                    src={ASSETS.avatarSuit}
+                    src={avatarSuit}
                     alt={lang === "vi" ? "Lê Tuấn Anh mặc vest đen, áo sơ mi trắng lịch sự" : "Le Tuan Anh wearing a black suit and white shirt"}
                     className="w-full h-full object-contain"
                     onError={(event) => {
-                      if (event.currentTarget.getAttribute("src") === ASSETS.avatarSuit) {
-                        event.currentTarget.src = ASSETS.avatarSuitFallback;
+                      if (event.currentTarget.getAttribute("src") === avatarSuit) {
+                        event.currentTarget.src = publicAssetPath(ASSETS.avatarSuitFallback);
                       }
                     }}
                   />

@@ -1,4 +1,5 @@
 import React from "react";
+import { publicAssetPath } from "../utils/publicAssetPath";
 import {
   Car,
   Code2,
@@ -79,7 +80,7 @@ export function PortfolioProjectsSection(props) {
                       {typeof proj.image === "string" &&
                       (proj.image.startsWith("/images/") || proj.image.startsWith("blob:")) ? (
                         <img
-                          src={proj.image}
+                          src={proj.image.startsWith("/images/") ? publicAssetPath(proj.image) : proj.image}
                           alt={lang === "vi" ? proj.title : proj.titleEn || proj.title}
                           className="h-full w-full bg-slate-950 object-contain p-2"
                         />

@@ -1,5 +1,6 @@
 import React from "react";
 import { ASSETS, CANDIDATE_INFO, SEVEN_PILLARS } from "../data/portfolioContent";
+import { publicAssetPath } from "../utils/publicAssetPath";
 
 export function PortfolioHomeSection(props) {
   const { activeTab, lang, projects, themeCard, themeSubtext, themePrimaryText, themeEmeraldText } = props;
@@ -15,7 +16,7 @@ export function PortfolioHomeSection(props) {
               <div className="grid grid-cols-1 items-center gap-6 p-4 sm:p-6 md:grid-cols-[minmax(220px,300px)_1fr]">
                 <div className="h-[26rem] overflow-hidden rounded-xl bg-slate-950">
                   <img
-                    src={ASSETS.divineTree}
+                    src={publicAssetPath(ASSETS.divineTree)}
                     alt={lang === "vi" ? "Chân dung toàn thân Lê Tuấn Anh" : "Full-length portrait of Le Tuan Anh"}
                     className="h-full w-full object-contain"
                   />

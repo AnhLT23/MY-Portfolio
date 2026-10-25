@@ -2,6 +2,7 @@ import React from "react";
 import { Waves } from "lucide-react";
 import { CAMPUS_EVENTS, CLUB_ACTIVITIES } from "../data/portfolioActivities";
 import { ASSETS } from "../data/portfolioContent";
+import { publicAssetPath } from "../utils/publicAssetPath";
 
 function ActivityCards({ items, lang, themeCard, themeSubtext, themePrimaryText }) {
   return (
@@ -10,7 +11,7 @@ function ActivityCards({ items, lang, themeCard, themeSubtext, themePrimaryText 
         <article key={item.id} className={`overflow-hidden rounded-2xl border ${themeCard}`}>
           <div className="h-48 overflow-hidden">
             <img
-              src={item.image}
+              src={publicAssetPath(item.image)}
               alt={lang === "vi" ? item.imageAlt : item.imageAltEn || item.imageAlt}
               loading="lazy"
               className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
@@ -72,7 +73,7 @@ export function PortfolioActivitiesSection(props) {
             <article className={`overflow-hidden rounded-2xl border ${themeCard}`}>
               <div className="relative h-48 sm:h-56">
                 <img
-                  src={ASSETS.swimmingPool}
+                  src={publicAssetPath(ASSETS.swimmingPool)}
                   alt={lang === "vi" ? "Trải nghiệm biển và khám phá" : "Ocean exploration experience"}
                   loading="lazy"
                   className="h-full w-full object-cover"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Download, Menu, Moon, Sun, X } from "lucide-react";
 import { ASSETS, CANDIDATE_INFO } from "../data/portfolioContent";
+import { publicAssetPath } from "../utils/publicAssetPath";
 
 const navTabs = [
     { id: "home", labelVi: "Trang chủ", labelEn: "Home" },
@@ -29,7 +30,7 @@ export function PortfolioHeader(props) {
             className="flex items-center gap-2.5 text-left group bg-transparent border-0 cursor-pointer focus:outline-none"
           >
             <img
-              src={ASSETS.logo}
+              src={publicAssetPath(ASSETS.logo)}
               alt="Logo Lê Tuấn Anh"
               className="w-9 h-9 rounded-lg object-contain group-hover:scale-110 transition-transform"
             />
