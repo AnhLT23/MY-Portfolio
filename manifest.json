@@ -1,0 +1,15 @@
+{
+  "short_name": "Le Tuan Anh",
+  "name": "Lê Tuấn Anh Portfolio",
+  "icons": [
+    {
+      "src": "images/Logo.png",
+      "type": "image/png",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
